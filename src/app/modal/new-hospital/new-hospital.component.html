@@ -1,0 +1,51 @@
+<div id='exampleModal' class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar Nuevo Hospital</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form (ngSubmit)="onSubmit()"  #formMascota="ngForm">
+        <div class="modal-body">
+           
+                <mat-form-field style="width: 100%"  appearance="outline">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput name="nombre" [(ngModel)]="hospitalModel.nombre">
+                </mat-form-field>
+                <br>
+              
+                <mat-form-field style="width: 100%"  appearance="outline">
+                  <mat-label>Telefono</mat-label>
+                  <input matInput type="number"  name="telefono" [ngModel]="hospitalModel.telefono" >
+                </mat-form-field>
+                <br>
+                <br>
+
+                <mat-form-field style="width: 100%"  appearance="outline">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput  name='direccion' [ngModel]="hospitalModel.direccion">
+                  </mat-form-field>
+                  <br>
+
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>NIT</mat-label>
+                    <input matInput name="nit" [ngModel]="hospitalModel.nit">
+                  </mat-form-field>
+                  <br>
+
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>Representante</mat-label>
+                    <input matInput name="representante" [ngModel]="hospitalModel.representante" >
+                  </mat-form-field>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" >Save changes</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>

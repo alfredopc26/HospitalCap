@@ -1,0 +1,12 @@
+<mat-card>
+<div class="container" *ngFor="let hospital of hospitales">
+<mat-list role="list">
+    <mat-list-item role="listitem"><button mat-raised-button color="primary" class="btn btn-lg btn-block" >{{ hospital.nombre }}</button></mat-list-item>
+</mat-list>
+</div>
+<mat-list role="list">
+    <mat-list-item role="listitem"><button mat-raised-button class="btn btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Agregar Hospital</button></mat-list-item>
+</mat-list>
+</mat-card>
+
+<app-new-hospital></app-new-hospital>

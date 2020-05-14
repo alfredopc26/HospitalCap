@@ -1,6 +1,6 @@
 export class Hospital {
 
-    identificacion: string;
+    id: string;
     nombre: string;
     telefono: number;
     direccion: string;

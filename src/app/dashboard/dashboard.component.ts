@@ -19,10 +19,12 @@ export class DashboardComponent implements OnInit {
   }
 
   listarHospitales(){
-        this.hospitalService.getHospital().subscribe(( data: Hospital[] ) => {
-          debugger;
+        this.hospitalService.getHospitales().subscribe(( data: Hospital[] ) => {
+          
           this.hospitales = data;
           console.log(this.hospitales);
 
       });
-    }}
+    }
+  
+  }

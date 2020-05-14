@@ -1,5 +1,6 @@
 import { Hospital } from '../model/hospital';
 import { Newhospital } from '../model/newhospital';
+import { Doctores } from '../model/doctores';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -13,8 +14,15 @@ export class ApiHospitalService {
 
   constructor( private http:HttpClient ) { }
 
-  getHospital(){
+  getHospitales(){
     return this.http.get<Hospital[]>('http://localhost/webServices/controller.api.php?option=getHospitales');
+  }
+
+  getHospital(id: string){
+    return this.http.get<Hospital[]>('http://localhost/webServices/controller.api.php?option=getHospital&hospital='+id);
+  }
+  getDoctor(id: string){
+    return this.http.get<Doctores[]>('http://localhost/webServices/controller.api.php?option=getDoctores&hospital='+id);
   }
 
   createHospital(newHospital: Newhospital){

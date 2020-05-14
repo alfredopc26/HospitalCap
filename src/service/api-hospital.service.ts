@@ -18,7 +18,7 @@ export class ApiHospitalService {
     return this.http.get<Hospital[]>('http://localhost/webServices/controller.api.php?option=getHospitales');
   }
 
-  getHospital(id: string){
+  getHospital(id: Hospital){
     return this.http.get<Hospital[]>('http://localhost/webServices/controller.api.php?option=getHospital&hospital='+id);
   }
   getDoctor(id: string){

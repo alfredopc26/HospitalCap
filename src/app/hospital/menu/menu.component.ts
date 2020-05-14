@@ -10,8 +10,8 @@ import { Hospital } from '../../../model/hospital';
 })
 export class MenuComponent implements OnInit {
 
-  hospital: Hospital[];
-  hospitalPar: string;
+  hosp: any;
+  id: string;
 
   constructor(
     private rutaActiva: ActivatedRoute,
@@ -20,22 +20,22 @@ export class MenuComponent implements OnInit {
      
     this.rutaActiva.params.subscribe(params=>{
       console.log(params['idHospital']);
-      this.hospitalPar=params['idHospital'];
-
-      this.hospitalService.getHospital(this.hospitalPar).subscribe(( data: Hospital[] ) => {
-      
-        this.hospital = data;
-
-        console.log(this.hospital);
-
-    });
-
-    })     
+        this.id=params['idHospital'];
+      })     
     
   
    }
 
-  ngOnInit(): void {
+   ngOnInit(){
+    this.obtenerHospital(this.id);
   }
 
+
+  obtenerHospital(id){
+
+    this.hospitalService.getHospital(id).subscribe( ( data: Hospital[] ) => {
+      this.hosp = data;
+      console.log(data);
+  });
+}
 }

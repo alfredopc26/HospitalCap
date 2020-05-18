@@ -22,11 +22,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 import { NewHospitalComponent } from './modal/new-hospital/new-hospital.component';
 import { TriageComponent } from './hospital/triage/triage.component';
 import { MenuComponent } from './hospital/menu/menu.component';
+import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-doctores.component';
 
 
 
@@ -36,7 +39,8 @@ import { MenuComponent } from './hospital/menu/menu.component';
     DashboardComponent,
     NewHospitalComponent,
     TriageComponent,
-    MenuComponent
+    MenuComponent,
+    GestionDoctoresComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ import { MenuComponent } from './hospital/menu/menu.component';
     MatIconModule,
     MatSelectModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

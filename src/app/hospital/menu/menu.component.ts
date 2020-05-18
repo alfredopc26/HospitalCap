@@ -17,14 +17,11 @@ export class MenuComponent implements OnInit {
     private rutaActiva: ActivatedRoute,
     private hospitalService: ApiHospitalService
    ) {
-     
-    this.rutaActiva.params.subscribe(params=>{
+    this.rutaActiva.params.subscribe(params => {
       console.log(params['idHospital']);
         this.id=params['idHospital'];
-      })     
-    
-  
-   }
+      });
+}
 
    ngOnInit(){
     this.obtenerHospital(this.id);

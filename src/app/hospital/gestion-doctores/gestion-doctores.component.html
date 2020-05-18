@@ -6,5 +6,27 @@
 </div>
 <mat-divider></mat-divider>
 <mat-card> 
-
+<table class="table table-bordered" id="table_doctores">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Tipo Sangre</th>
+            <th>Experiencia</th>
+            <th>Nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctores">
+            <td>{{doctor.nombre}}</td>
+            <td>{{doctor.direccion}}</td>
+            <td>{{doctor.telefono}}</td>
+            <td>{{doctor.tiposangre}}</td>
+            <td>{{doctor.experiencia}}</td>
+            <td>{{doctor.nacimiento}}</td>
+        </tr>
+    </tbody>
+</table>
 </mat-card>
+

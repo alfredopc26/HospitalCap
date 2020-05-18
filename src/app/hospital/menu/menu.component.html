@@ -30,7 +30,7 @@
         <mat-card> 
             <h1>Gestionar Pacientes</h1>
         <div class="example-button-container" style="text-align: center;">
-            <button mat-fab color="basic" aria-label="Example icon button with a home icon">
+            <button mat-fab color="basic" aria-label="Example icon button with a home icon" [routerLink]="['/gestion_pacientes', hosp.id]">
               <mat-icon>people_alt</mat-icon>
             </button>
         </div>

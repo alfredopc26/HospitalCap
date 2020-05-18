@@ -30,6 +30,7 @@ import { NewHospitalComponent } from './modal/new-hospital/new-hospital.componen
 import { TriageComponent } from './hospital/triage/triage.component';
 import { MenuComponent } from './hospital/menu/menu.component';
 import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-doctores.component';
+import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
 
 
 
@@ -40,7 +41,8 @@ import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-do
     NewHospitalComponent,
     TriageComponent,
     MenuComponent,
-    GestionDoctoresComponent
+    GestionDoctoresComponent,
+    GestionPacientesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,34 @@
+<div class="box box-default">
+    <div class="box-header" style="text-align: center;" >
+        <h1>Lista de Pacientes para el hospital: </h1>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<mat-card> 
+<table class="table table-bordered" id="table_pacientes">
+    <thead>
+        <tr>
+            <th>Identificacion</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>EPS</th>
+            <th>Acompañante</th>
+            <th>Antecedentes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let paciente of pacientes">
+            <td>{{paciente.id}}</td>
+            <td>{{paciente.nombre}}</td>
+            <td>{{paciente.direccion}}</td>
+            <td>{{paciente.telefono}}</td>
+            <td>{{paciente.eps}}</td>
+            <td>{{paciente.acompaniante}}</td>
+            <td>{{paciente.antecedentes}}</td>
+        </tr>
+    </tbody>
+</table>
+</mat-card>
+
+

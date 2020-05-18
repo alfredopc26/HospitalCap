@@ -21,9 +21,11 @@
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "angular-materialize": "^0.2.2",
     "bootstrap": "^4.4.1",
     "datatables.net": "^1.10.21",
     "datatables.net-bs4": "^1.10.21",
+    "materialize-css": "^1.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

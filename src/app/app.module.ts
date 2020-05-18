@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
@@ -23,6 +24,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -31,6 +34,8 @@ import { TriageComponent } from './hospital/triage/triage.component';
 import { MenuComponent } from './hospital/menu/menu.component';
 import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-doctores.component';
 import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
+import { NewDoctorComponent } from './modal/new-doctor/new-doctor.component';
+import { NewPacienteComponent } from './modal/new-paciente/new-paciente.component';
 
 
 
@@ -42,7 +47,9 @@ import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-
     TriageComponent,
     MenuComponent,
     GestionDoctoresComponent,
-    GestionPacientesComponent
+    GestionPacientesComponent,
+    NewDoctorComponent,
+    NewPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,8 @@ import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-
     MatSelectModule,
     MatDividerModule,
     MatGridListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

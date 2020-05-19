@@ -29,7 +29,7 @@ export class ApiHospitalService {
     return this.http.get<Pacientes[]>('http://192.168.39.102/webServices/controller.api.php?option=getPacientes&hospital='+id);
   }
 
-  createHospital(newHospital: Newhospital){
-    return this.http.post('http://192.168.39.102/webServices/controller.api.php?option=insertHospital', newHospital );
+  crearHospital(hospital:Hospital): Observable<ApiHospitalService>  {
+    return this.http.post<ApiHospitalService>('http://192.168.39.102/webServices/controller.api.php?option=insertHospital', JSON.stringify(hospital));
   }
 }

@@ -15,6 +15,7 @@
             <th>EPS</th>
             <th>Acompañante</th>
             <th>Antecedentes</th>
+            <th>Accion</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,15 @@
             <td>{{paciente.eps}}</td>
             <td>{{paciente.acompaniante}}</td>
             <td>{{paciente.antecedentes}}</td>
+            <td>
+                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </td>
         </tr>
     </tbody>
 </table>

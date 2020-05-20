@@ -31,11 +31,12 @@ export class NewHospitalComponent implements OnInit {
 
 onSubmit(){
 
+
   let form = this.addForm.value;
   console.log(form);
   this.hospitalService.crearHospital(this.addForm.value)
   .subscribe( data => {
-    this.router.navigate(['']);
+    this.router.navigate(['dashboard']);
   });
 }
 

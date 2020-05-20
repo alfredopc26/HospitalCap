@@ -5,10 +5,13 @@ import { MenuComponent } from './hospital/menu/menu.component';
 import { TriageComponent } from './hospital/triage/triage.component';
 import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-doctores.component';
 import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
+import { NewHospitalComponent } from './modal/new-hospital/new-hospital.component';
 
 
 const routes: Routes = [ 
   { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'nuevoHospital', component: NewHospitalComponent },
   { path: 'hospital/:idHospital', component: MenuComponent },
   { path: 'triage/:idHospital', component: TriageComponent },
   { path: 'gestion_doctores/:idHospital', component: GestionDoctoresComponent },

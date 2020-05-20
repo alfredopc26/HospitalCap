@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import { Hospital } from '../../../model/hospital';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-menu',
@@ -33,6 +34,7 @@ export class MenuComponent implements OnInit {
     this.hospitalService.getHospital(id).subscribe( ( data: Hospital[] ) => {
       this.hosp = data;
       console.log(data);
+
   });
 }
 }

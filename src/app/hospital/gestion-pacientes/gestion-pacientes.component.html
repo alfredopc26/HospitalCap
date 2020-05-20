@@ -1,0 +1,49 @@
+<div class="box box-default">
+    <div class="box-header" style="text-align: center;" >
+        <h1>Lista de Pacientes para el hospital: </h1>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<mat-card> 
+<table class="table table-bordered" id="table_pacientes">
+    <thead>
+        <tr>
+            <th>Identificacion</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>EPS</th>
+            <th>Acompañante</th>
+            <th>Antecedentes</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let paciente of pacientes">
+            <td>{{paciente.id}}</td>
+            <td>{{paciente.nombre}}</td>
+            <td>{{paciente.direccion}}</td>
+            <td>{{paciente.telefono}}</td>
+            <td>{{paciente.eps}}</td>
+            <td>{{paciente.acompaniante}}</td>
+            <td>{{paciente.antecedentes}}</td>
+            <td>
+                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</mat-card>
+
+<div class="contenedor">
+    <button class="botonF1" data-toggle="modal" data-target="#ModalNewPaciente">
+      <span>+</span>
+    </button>
+     </div>
+     <app-new-paciente></app-new-paciente>

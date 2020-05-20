@@ -1,0 +1,71 @@
+<div id='ModalNewPaciente' class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar Nuevo Paciente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form >
+        <div class="modal-body">
+
+            <mat-form-field style="width: 100%"  appearance="outline">
+                <mat-label>Identificacion</mat-label>
+                <input matInput name="identificacion" >
+              </mat-form-field>
+              <br>
+                <mat-form-field style="width: 100%"  appearance="outline">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput name="nombre" >
+                </mat-form-field>
+                <br>
+              
+                <mat-form-field style="width: 100%"  appearance="outline">
+                  <mat-label>Telefono</mat-label>
+                  <input matInput type="number"  name="telefono" >
+                </mat-form-field>
+                <br>
+                <br>
+
+                <mat-form-field style="width: 100%"  appearance="outline">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput  name='direccion' >
+                  </mat-form-field>
+                  <br>
+
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>EPS</mat-label>
+                    <mat-select>
+                        <mat-option value="sura">SURA</mat-option>
+                        <mat-option value="sanitas">SANITAS</mat-option>
+                        <mat-option value="medimas">MEDIMAS</mat-option>
+                        <mat-option value="comeva">COOMEVA</mat-option>
+                        <mat-option value="nueva_eps">NUEVA EPS</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  <br>
+
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>Acopañante</mat-label>
+                    <input matInput name="acompaniante" type="number">
+                  </mat-form-field>
+
+                  <div>
+                    <label>Antecedentes: </label>
+                    <mat-radio-group >
+                      <mat-radio-button value="Y">SI</mat-radio-button>
+                      <mat-radio-button value="N">NO</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" >Save changes</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+

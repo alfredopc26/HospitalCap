@@ -1,0 +1,49 @@
+
+<div class="box box-default">
+    <div class="box-header" style="text-align: center;" >
+        <h1>Lista de Doctores para el hospital: </h1>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<mat-card> 
+<table class="table table-bordered" id="table_doctores">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Tipo Sangre</th>
+            <th>Experiencia</th>
+            <th>Nacimiento</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctores">
+            <td>{{doctor.nombre}}</td>
+            <td>{{doctor.direccion}}</td>
+            <td>{{doctor.telefono}}</td>
+            <td>{{doctor.tiposangre}}</td>
+            <td>{{doctor.experiencia}}</td>
+            <td>{{doctor.nacimiento}}</td>
+            <td>
+                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</mat-card>
+
+<div class="contenedor">
+    <button class="botonF1" data-toggle="modal" data-target="#ModalNewDoctor">
+      <span>+</span>
+    </button>
+     </div>
+
+     <app-new-doctor></app-new-doctor>

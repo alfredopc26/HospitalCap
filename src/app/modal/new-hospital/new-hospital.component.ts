@@ -1,8 +1,7 @@
 import { ApiHospitalService } from '../../../service/api-hospital.service';
-import { Hospital } from '../../../model/hospital';
-import { Newhospital } from '../../../model/newhospital';
+import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-hospital',
@@ -11,21 +10,33 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class NewHospitalComponent implements OnInit {
 
- constructor(private hospitalService: ApiHospitalService, private snackBar: MatSnackBar) { }
+  addForm: FormGroup;
+ constructor(
+   private hospitalService: ApiHospitalService,
+   private formBuilder: FormBuilder,
+   private router: Router
+   ) { }
 
- hospitales: Hospital[];
- 
-  ngOnInit(): void {
-  }
+ ngOnInit(): void {
+  this.addForm = this.formBuilder.group({
+    id: [],
+    nombre: ['', Validators.required],
+    direccion: ['', Validators.required],
+    telefono: ['', Validators.required],
+    nit: ['', Validators.required],
+    representante: ['', Validators.required]
+   });
+}
 
-  hospitalModel = new Newhospital("", "", "", "", "")
 
-  onSubmit() {
-    this.hospitalService.createHospital(this.hospitalModel).subscribe(() => {
-      this.snackBar.open('Hospital guardada', undefined, {
-        duration: 1500,
-      });
-    })
-  }
+onSubmit(){
+
+  let form = this.addForm.value;
+  console.log(form);
+  this.hospitalService.crearHospital(this.addForm.value)
+  .subscribe( data => {
+    this.router.navigate(['']);
+  });
+}
 
 }

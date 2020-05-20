@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -22,11 +23,19 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+
+
 
 
 import { NewHospitalComponent } from './modal/new-hospital/new-hospital.component';
 import { TriageComponent } from './hospital/triage/triage.component';
 import { MenuComponent } from './hospital/menu/menu.component';
+import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-doctores.component';
+import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
+import { NewDoctorComponent } from './modal/new-doctor/new-doctor.component';
+import { NewPacienteComponent } from './modal/new-paciente/new-paciente.component';
 
 
 
@@ -36,7 +45,11 @@ import { MenuComponent } from './hospital/menu/menu.component';
     DashboardComponent,
     NewHospitalComponent,
     TriageComponent,
-    MenuComponent
+    MenuComponent,
+    GestionDoctoresComponent,
+    GestionPacientesComponent,
+    NewDoctorComponent,
+    NewPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -50,11 +63,14 @@ import { MenuComponent } from './hospital/menu/menu.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSnackBarModule,
     MatIconModule,
     MatSelectModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatRadioModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

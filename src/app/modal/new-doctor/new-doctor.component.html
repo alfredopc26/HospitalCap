@@ -1,43 +1,53 @@
-<div id='exampleModal' class="modal" tabindex="-1" role="dialog">
+<div id='ModalNewDoctor' class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Agregar Nuevo Hospital</h5>
+          <h5 class="modal-title">Agregar Nuevo Doctor</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
+        <form >
         <div class="modal-body">
-           
+
+            <mat-form-field style="width: 100%"  appearance="outline">
+                <mat-label>Identificacion</mat-label>
+                <input matInput name="identificacion" >
+              </mat-form-field>
+              <br>
                 <mat-form-field style="width: 100%"  appearance="outline">
                   <mat-label>Nombre</mat-label>
-                  <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre">
+                  <input matInput name="nombre" >
                 </mat-form-field>
                 <br>
               
                 <mat-form-field style="width: 100%"  appearance="outline">
                   <mat-label>Telefono</mat-label>
-                  <input matInput type="number"  formControlName="telefono" placeholder="Telefono" name="telefono" class="form-control" id="telefono">
+                  <input matInput type="number"  name="telefono" >
                 </mat-form-field>
                 <br>
                 <br>
 
                 <mat-form-field style="width: 100%"  appearance="outline">
                     <mat-label>Direccion</mat-label>
-                    <input matInput type="text"  formControlName="direccion" placeholder="Direccion" name="direccion" class="form-control" id="direccion">
+                    <input matInput  name='direccion' >
                   </mat-form-field>
                   <br>
 
                   <mat-form-field style="width: 100%"   appearance="outline">
-                    <mat-label>NIT</mat-label>
-                    <input matInput type="number"  formControlName="nit" placeholder="NIT" name="nit" class="form-control" id="nit">
+                    <mat-label>Tipo de sangre</mat-label>
+                    <input matInput name="tipoSangre" >
                   </mat-form-field>
                   <br>
 
                   <mat-form-field style="width: 100%"   appearance="outline">
-                    <mat-label>Representante</mat-label>
-                    <input matInput type="text"  formControlName="representante" placeholder="Representante" name="representante" class="form-control" id="representante">
+                    <mat-label>Experiencia</mat-label>
+                    <input matInput name="representante" type="number">
+                  </mat-form-field>
+
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>Nacimiento</mat-label>
+                    <input matInput name="nacimiento" type="date">
                   </mat-form-field>
               
         </div>
@@ -49,3 +59,4 @@
       </div>
     </div>
   </div>
+

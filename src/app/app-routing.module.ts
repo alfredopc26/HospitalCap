@@ -6,15 +6,16 @@ import { MenuComponent } from './hospital/menu/menu.component';
 import { TriageComponent } from './hospital/triage/triage.component';
 import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-doctores.component';
 import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
+<<<<<<< HEAD
 import { NewHospitalComponent } from './modal/new-hospital/new-hospital.component';
 =======
 >>>>>>> parent of e87d84e... cambiosEmpresa0
+=======
+>>>>>>> parent of c2362c2... CambiosEmpresa1
 
 
 const routes: Routes = [ 
   { path: '', component: DashboardComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'nuevoHospital', component: NewHospitalComponent },
   { path: 'hospital/:idHospital', component: MenuComponent },
 <<<<<<< HEAD
   { path: 'triage/:idHospital', component: TriageComponent },

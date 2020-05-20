@@ -1,34 +1,45 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<div id='exampleModal' class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar Nuevo Hospital</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
+        <div class="modal-body">
+           
+                <mat-form-field style="width: 100%"  appearance="outline">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre">
+                </mat-form-field>
+                <br>
+              
+                <mat-form-field style="width: 100%"  appearance="outline">
+                  <mat-label>Telefono</mat-label>
+                  <input matInput type="number"  formControlName="telefono" placeholder="Telefono" name="telefono" class="form-control" id="telefono">
+                </mat-form-field>
+                <br>
+                <br>
+>>>>>>> parent of c2362c2... CambiosEmpresa1
 
- <div class="box box-primary">
-  <div class="box-header with-border">
-    <h3 class="box-title">Quick Example</h3>
-  </div>
-<mat-divider></mat-divider>
-<div class="col-md-8"  style="text-align: center;" >
-  <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
-  <div class="box-body">
-      
-          <div class="form-group">
-            <label for="text">Nombre:</label>
-            <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre" required>
-          </div>
+                <mat-form-field style="width: 100%"  appearance="outline">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput type="text"  formControlName="direccion" placeholder="Direccion" name="direccion" class="form-control" id="direccion">
+                  </mat-form-field>
+                  <br>
 
-          <div class="form-group">
-            <label for="text">Telefono:</label>
-            <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre" required>
-          </div>
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>NIT</mat-label>
+                    <input matInput type="number"  formControlName="nit" placeholder="NIT" name="nit" class="form-control" id="nit">
+                  </mat-form-field>
+                  <br>
 
-          <div class="form-group">
-            <label for="text">Direccion:</label>
-            <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre" required>
-          </div>
-
-          <div class="form-group">
-            <label for="text">NIT:</label>
-            <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre" required>
-          </div>
-
+<<<<<<< HEAD
           <div class="form-group">
             <label for="text">Reoresentante:</label>
             <input matInput name="nombre" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre" required>
@@ -76,6 +87,11 @@
                   <mat-form-field style="width: 100%"   appearance="outline">
                     <mat-label>Representante</mat-label>
                     <input matInput name="representante" [ngModel]="hospitalModel.representante" >
+=======
+                  <mat-form-field style="width: 100%"   appearance="outline">
+                    <mat-label>Representante</mat-label>
+                    <input matInput type="text"  formControlName="representante" placeholder="Representante" name="representante" class="form-control" id="representante">
+>>>>>>> parent of c2362c2... CambiosEmpresa1
                   </mat-form-field>
               
         </div>
@@ -86,13 +102,8 @@
     </form>
       </div>
     </div>
+<<<<<<< HEAD
 >>>>>>> parent of 8abf03b... 18Ms
+=======
+>>>>>>> parent of c2362c2... CambiosEmpresa1
   </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" [routerLink]="['/dashboard']">Cancelar</button>
-  <button type="submit" class="btn btn-primary" >Guardar</button>
-</div>
-</form>
-</div>
-</div>
-

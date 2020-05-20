@@ -21,12 +21,15 @@ export class NewHospitalComponent implements OnInit {
   hospitalModel = new Newhospital("", "", "", "", "")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of c2362c2... CambiosEmpresa1
   let form = this.addForm.value;
   console.log(form);
   this.hospitalService.crearHospital(this.addForm.value)
   .subscribe( data => {
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['']);
   });
 }
 =======

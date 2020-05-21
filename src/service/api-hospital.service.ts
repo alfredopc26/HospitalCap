@@ -29,6 +29,7 @@ export class ApiHospitalService {
   }
 
 
+  
   crearHospital(hospital:Hospital): Observable<ApiHospitalService>  {
     return this.http.post<ApiHospitalService>('http://localhost/webServices/controller.api.php?option=insertHospital', JSON.stringify(hospital));
 

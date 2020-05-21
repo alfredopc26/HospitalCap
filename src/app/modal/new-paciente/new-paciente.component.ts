@@ -48,7 +48,7 @@ export class NewPacienteComponent implements OnInit {
      this.hospitalService.crearPaciente(this.addForm.value)
      .subscribe( data => {
 
-       this.router.navigate(['/gestion_pacientes/'+data['id']]);
+       this.router.navigate(['/gestion_pacientes/'+this.id]);
      });
 
    }else{

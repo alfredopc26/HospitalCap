@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import { Doctores } from '../../../model/doctores';
+import { Pacientes } from '../../../model/pacientes';
 
 @Component({
   selector: 'app-triage',
@@ -11,6 +12,7 @@ import { Doctores } from '../../../model/doctores';
 export class TriageComponent implements OnInit {
 
   doctores: Doctores[];
+  pacientes: Pacientes[];
   id: string;
 
   constructor(
@@ -25,6 +27,7 @@ export class TriageComponent implements OnInit {
 
     ngOnInit(){
       this.obtenerDoctores(this.id);
+      this.obtenerPacientes(this.id);
     }
 
 
@@ -35,4 +38,12 @@ export class TriageComponent implements OnInit {
         console.log(data);
     });
   }
+
+  obtenerPacientes(id){
+
+    this.hospitalService.getPacientes(id).subscribe( ( data: Pacientes[] ) => {
+      this.pacientes = data;
+      console.log(data);
+  });
+}
   }

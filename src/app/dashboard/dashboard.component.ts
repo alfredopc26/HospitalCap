@@ -1,5 +1,7 @@
 import { ApiHospitalService } from './../../service/api-hospital.service';
 import { Hospital } from '../../model/hospital';
+import {MatDialog} from '@angular/material/dialog';
+import { NewHospitalComponent } from '../modal/new-hospital/new-hospital.component';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +14,11 @@ export class DashboardComponent implements OnInit {
 
   hospitales: Hospital[];
 
-  constructor( private hospitalService: ApiHospitalService ) { }
+  constructor( 
+    private hospitalService: ApiHospitalService,
+    public dialog: MatDialog,
+     ) { }
+
 
   ngOnInit(){
     this.listarHospitales();
@@ -26,5 +32,16 @@ export class DashboardComponent implements OnInit {
 
       });
     }
+
+   openDialog() {
+      const dialogRef = this.dialog.open(NewHospitalComponent);
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+
+
+    
   
   }

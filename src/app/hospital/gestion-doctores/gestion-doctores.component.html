@@ -15,6 +15,7 @@
             <th>Tipo Sangre</th>
             <th>Experiencia</th>
             <th>Nacimiento</th>
+            <th>Accion</th>
         </tr>
     </thead>
     <tbody>
@@ -25,15 +26,23 @@
             <td>{{doctor.tiposangre}}</td>
             <td>{{doctor.experiencia}}</td>
             <td>{{doctor.nacimiento}}</td>
+            <td>
+                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="deleteitem(doctor.id)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </td>
         </tr>
     </tbody>
 </table>
 </mat-card>
 
 <div class="contenedor">
-    <button class="botonF1" data-toggle="modal" data-target="#ModalNewDoctor">
+    <button class="botonF1" [routerLink]="['/crear_doctor', id]">
       <span>+</span>
     </button>
      </div>
 
-     <app-new-doctor></app-new-doctor>

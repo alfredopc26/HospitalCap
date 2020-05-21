@@ -1,31 +1,14 @@
 <mat-card>
-<div class="container" *ngFor="let hospital of hospitales, index as i">
-<mat-list role="list">
-    <mat-list-item role="listitem"><button mat-raised-button color="primary" class="btn btn-lg btn-block" [routerLink]="['/hospital', hospital.id]" >{{ hospital.nombre }}</button></mat-list-item>
-</mat-list>
-</div>
-<mat-list role="list">
-    <mat-list-item role="listitem"><button mat-raised-button class="btn btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Agregar Hospital</button></mat-list-item>
-</mat-list>
-</mat-card>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="contenedor">
-    <button class="botonF1" data-toggle="modal" data-target="#exampleModal">
-      <span>+</span>
-    </button>
-     </div>
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> parent of bdae98f... 18Ms
-=======
->>>>>>> parent of bdae98f... 18Ms
-<app-new-hospital></app-new-hospital>
->>>>>>> parent of bdae98f... 18Ms
-=======
-<app-new-hospital></app-new-hospital>
->>>>>>> parent of c2362c2... CambiosEmpresa1
+    <div class="container" *ngFor="let hospital of hospitales, index as i">
+    <mat-list role="list">
+        <mat-list-item role="listitem"><button mat-raised-button color="primary" class="btn btn-lg btn-block" [routerLink]="['/hospital', hospital.id]" >{{ hospital.nombre }}</button></mat-list-item>
+    </mat-list>
+    </div>
+    
+    </mat-card>
+    
+    <div class="contenedor">
+        <button class="botonF1" (click)="openDialog()">
+          <span>+</span>
+        </button>
+         </div>

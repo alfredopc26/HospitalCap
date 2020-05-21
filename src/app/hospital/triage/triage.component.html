@@ -1,45 +1,60 @@
-<<<<<<< HEAD
 <div class="box box-default">
-    <div class="box-header" style="text-align: center;" >
-        <h1>Nuevo Triage</h1>
-    </div>
+  <div class="box-header" style="text-align: center;" >
+      <h1>Nuevo Triage</h1>
+  </div>
 </div>
 <mat-divider></mat-divider>
 <mat-card> 
-    <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <mat-form-field >
-                <mat-label>Selecciona Doctor:</mat-label>
-                <mat-select >
-                    <mat-option >--</mat-option>
-                    <mat-option *ngFor="let doctor of doctores" [value]="doctor.id">
-                        {{doctor.nombre}}
-                      </mat-option>                    
-                </mat-select>
-              </mat-form-field>        
-          </div>
-          <div class="col-md-4">
-            <mat-form-field >
-                <mat-label>Selecciona Doctor:</mat-label>
-                <mat-select >
-                    <mat-option >--</mat-option>
-                    <mat-option *ngFor="let doctor of doctores" [value]="doctor.id">
-                        {{doctor.nombre}}
-                      </mat-option>                    
-                </mat-select>
-              </mat-form-field>
-          </div>
-          <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Motivos de Consulta</mat-label>
-                    <textarea matInput placeholder="Ej. dolor en pecho, congestion, etc"></textarea>
-                  </mat-form-field>
-          </div>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field >
+              <mat-label>Selecciona Doctor:</mat-label>
+              <mat-select >
+                  <mat-option >--</mat-option>
+                  <mat-option *ngFor="let doctor of doctores" [value]="doctor.id">
+                      {{doctor.nombre}}
+                    </mat-option>                    
+              </mat-select>
+            </mat-form-field>        
+        </div>
+        <div class="col-md-4">
+          <mat-form-field >
+              <mat-label>Selecciona Paciente:</mat-label>
+              <mat-select >
+                  <mat-option >--</mat-option>
+                  <mat-option *ngFor="let paciente of pacientes" [value]="paciente.id">
+                      {{paciente.nombre}}
+                    </mat-option>                    
+              </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                  <mat-label>Motivos de Consulta</mat-label>
+                  <textarea matInput placeholder="Ej. dolor en pecho, congestion, etc"></textarea>
+                </mat-form-field>
         </div>
       </div>
+    </div>
 </mat-card>
-=======
-
-
->>>>>>> parent of e87d84e... cambiosEmpresa0
+<mat-divider></mat-divider>
+<mat-card> 
+<table class="table table-bordered" id="table_pacientes">
+    <thead>
+        <tr>
+            <th>ID Triage</th>
+            <th>Doctor</th>
+            <th>Paciente</th>
+            <th>Motivo Consulta</th>
+            <th>Diagnostico</th>
+            <th>Medicamentos</th>
+            <th>COVID-19</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+    </tbody>
+</table>
+</mat-card>

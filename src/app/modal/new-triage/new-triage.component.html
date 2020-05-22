@@ -1,15 +1,15 @@
-<h1 mat-dialog-title>Agregar Nuevo paciente</h1>
+<h1 mat-dialog-title>Agregar Nueva atencion</h1>
 <div mat-dialog-content>
         <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
         <div class="modal-body">
 
             <mat-form-field style="width: 100%"  appearance="outline">
-                <mat-label>Identificacion</mat-label>
+                <mat-label>Doctor</mat-label>
                 <input matInput type="number" name="identificacion" formControlName="identificacion" placeholder="Identificacion" class="form-control" id="identificacion">
               </mat-form-field>
               <br>
                 <mat-form-field style="width: 100%"  appearance="outline">
-                  <mat-label>Nombre</mat-label>
+                  <mat-label>Paciente</mat-label>
                   <input matInput name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre">
                 </mat-form-field>
                 <br>

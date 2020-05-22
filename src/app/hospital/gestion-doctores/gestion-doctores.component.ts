@@ -1,6 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import { Doctores } from '../../../model/doctores';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogoConfirmacionComponent } from "../../dialogo-confirmacion/dialogo-confirmacion.component"
+import { MatDialog } from '@angular/material/dialog';
 
 import * as $ from 'jquery';
 import 'datatables.net';
@@ -25,6 +28,8 @@ export class GestionDoctoresComponent implements OnInit{
     private rutaActiva: ActivatedRoute,
     private hospitalService: ApiHospitalService,
     private chRef: ChangeDetectorRef,
+    private snackBar: MatSnackBar,
+    private dialogo: MatDialog
     ) {
       this.rutaActiva.params.subscribe(params => {
       console.log(params['idHospital']);
@@ -37,36 +42,35 @@ export class GestionDoctoresComponent implements OnInit{
       this.obtenerDoctores(this.id);
     }
 
-    
-    obtenerDoctores(id){
-
-      this.hospitalService.getDoctor(id).subscribe( ( data: Doctores[] ) => {
-        this.doctores = data;
-        console.log(data);
-
-        this.chRef.detectChanges();
-        const table: any = $('#table_doctores');
-        this.dataTable = table.DataTable();
-    });
+  eliminarDoctor(doctor: Doctores) {
+    this.dialogo
+      .open(DialogoConfirmacionComponent, {
+        data: `¿Realmente quieres eliminar al doctor ${doctor.nombre}?`
+      })
+      .afterClosed()
+      .subscribe((confirmado: Boolean) => {
+        if (!confirmado) return;
+        this.hospitalService
+          .eliminarDoctor(doctor.id)
+          .subscribe(() => {
+            this.obtenerDoctores(this.id);
+            this.snackBar.open('Doctor Eliminado', undefined, {
+              duration: 1500,
+            });
+          });
+      });
   }
 
-  deleteitem(doctor: string){
+  obtenerDoctores(id){
 
-  
-    if (confirm('Estas seguro que deseas borrar este item ?')) {
+    this.hospitalService.getDoctor(id).subscribe( ( data: Doctores[] ) => {
+      this.doctores = data;
+      console.log(data);
 
-     console.log(doctor);
-     this.hospitalService.eliminarDoctor(doctor)
-     .subscribe( data => {
-         this.ngOnInit();
-     });
-
-   }else{
-
-   }
-   
-   
-   }
-
+      this.chRef.detectChanges();
+      const table: any = $('#table_doctores');
+      this.dataTable = table.DataTable();
+  });
+}
 
 }

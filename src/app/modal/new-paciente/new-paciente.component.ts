@@ -30,7 +30,8 @@ export class NewPacienteComponent implements OnInit {
   ngOnInit(): void {
     this.addForm = this.formBuilder.group({
       identificacion: ['', Validators.required],
-      nombre: ['', Validators.required],      
+      hospital: this.id,
+      nombre: ['', Validators.required],
       telefono: ['', Validators.required],
       direccion: ['', Validators.required],
       eps: ['', Validators.required],
@@ -42,19 +43,17 @@ export class NewPacienteComponent implements OnInit {
 
   onSubmit(){
     if (this.addForm.valid) {
-   
+      
      let form = this.addForm.value;
      console.log(form);
      this.hospitalService.crearPaciente(this.addForm.value)
      .subscribe( data => {
 
-       this.router.navigate(['/gestion_pacientes/'+this.id]);
+       this.router.navigate(['/gestion_pacientes/' + this.id]);
      });
 
    }else{
-     alert("Por favor llenar todos los campos.");
+     alert('Por favor llenar todos los campos.');
    }
-   
-   
    }
 }

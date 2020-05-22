@@ -26,6 +26,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -37,6 +38,8 @@ import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-do
 import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
 import { NewDoctorComponent } from './modal/new-doctor/new-doctor.component';
 import { NewPacienteComponent } from './modal/new-paciente/new-paciente.component';
+import { DialogoConfirmacionComponent } from './dialogo-confirmacion/dialogo-confirmacion.component';
+import { NewTriageComponent } from './modal/new-triage/new-triage.component';
 
 
 
@@ -50,7 +53,9 @@ import { NewPacienteComponent } from './modal/new-paciente/new-paciente.componen
     GestionDoctoresComponent,
     GestionPacientesComponent,
     NewDoctorComponent,
-    NewPacienteComponent
+    NewPacienteComponent,
+    DialogoConfirmacionComponent,
+    NewTriageComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,8 @@ import { NewPacienteComponent } from './modal/new-paciente/new-paciente.componen
     MatGridListModule,
     MatRadioModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

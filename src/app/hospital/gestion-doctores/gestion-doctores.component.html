@@ -9,6 +9,7 @@
 <table class="table table-bordered" id="table_doctores">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
@@ -20,6 +21,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let doctor of doctores">
+            <td>{{doctor.id}}</td>
             <td>{{doctor.nombre}}</td>
             <td>{{doctor.direccion}}</td>
             <td>{{doctor.telefono}}</td>
@@ -31,7 +33,7 @@
                 <mat-icon>edit</mat-icon>
               </button>
 
-              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="deleteitem(doctor.id)">
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="eliminarDoctor(doctor)">
                 <mat-icon>delete_forever</mat-icon>
               </button>
             </td>
@@ -41,14 +43,18 @@
 </mat-card>
 
 <div class="contenedor">
-    <button class="botonF1" [routerLink]="['/crear_doctor', id]">
+    <button class="botonF1" [routerLink]="['/crear_doctor', id]"  
+    #tooltip="matTooltip"
+    matTooltip="Agregar registros">
       <span>+</span>
     </button>
 
-    <button class="botonF2" [routerLink]="['/hospital', id]">
-        <span ><mat-icon>home</mat-icon></span>
-    </button>
-</div>
+    <button class="botonF2" [routerLink]="['/hospital', id]" 
+     #tooltip="matTooltip"
+    matTooltip="Atras" >
+        <span><mat-icon>replay</mat-icon></span>
+      </button>
+     </div>
 
 
 

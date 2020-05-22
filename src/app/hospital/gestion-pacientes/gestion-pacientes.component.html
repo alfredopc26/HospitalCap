@@ -32,7 +32,7 @@
                 <mat-icon>edit</mat-icon>
               </button>
 
-              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+              <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="eliminarPaciente(paciente)">
                 <mat-icon>delete_forever</mat-icon>
               </button>
             </td>
@@ -42,7 +42,15 @@
 </mat-card>
 
 <div class="contenedor">
-    <button class="botonF1" [routerLink]="['/crear_paciente', id]">
+    <button class="botonF1" [routerLink]="['/crear_paciente', id]"  
+    #tooltip="matTooltip"
+    matTooltip="Agregar registros">
       <span>+</span>
     </button>
+
+    <button class="botonF2" [routerLink]="['/hospital', id]" 
+     #tooltip="matTooltip"
+    matTooltip="Atras" >
+        <span><mat-icon>replay</mat-icon></span>
+      </button>
      </div>

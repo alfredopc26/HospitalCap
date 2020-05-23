@@ -1,7 +1,7 @@
 <mat-card>
     <div class="container" *ngFor="let hospital of hospitales, index as i">
     <mat-list role="list">
-        <mat-list-item role="listitem"><button mat-raised-button color="primary" class="btn btn-lg btn-block" [routerLink]="['/hospital', hospital.id]" >{{ hospital.nombre }}</button></mat-list-item>
+        <mat-list-item role="listitem"><button mat-raised-button color="accent" class="btn btn-lg btn-block" [routerLink]="['/hospital', hospital.id]" >{{ hospital.nombre }}</button></mat-list-item>
     </mat-list>
     </div>
     

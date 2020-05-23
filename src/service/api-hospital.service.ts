@@ -1,6 +1,7 @@
 import { Hospital } from '../model/hospital';
 import { Doctores } from '../model/doctores';
 import { Pacientes } from '../model/pacientes';
+import { Triage } from '../model/triage';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -31,6 +32,10 @@ export class ApiHospitalService {
   getPacientes(id: string){
     return this.http.get<Pacientes[]>(this.url+'option=getPacientes&hospital='+id);
   }
+  getTriage(id: string){
+    return this.http.get<Triage[]>(this.url+'option=getTriage&hospital='+id);
+  }
+
 
 
   
@@ -46,6 +51,10 @@ export class ApiHospitalService {
     return this.http.post<ApiHospitalService>(this.url+'option=insertPaciente', JSON.stringify(pacientes));
 
   }
+  crearTriage(triage:Triage): Observable<ApiHospitalService>  {
+    return this.http.post<ApiHospitalService>(this.url+'option=insertTriage', JSON.stringify(triage));
+
+  }
 
 
 
@@ -55,6 +64,10 @@ export class ApiHospitalService {
   }
   eliminarPaciente(id:string): Observable<ApiHospitalService>  {
     return this.http.get<ApiHospitalService>(this.url+'option=borrarPaciente&id='+id);
+
+  }
+  eliminarTriage(id:number): Observable<ApiHospitalService>  {
+    return this.http.get<ApiHospitalService>(this.url+'option=borrarTriage&id='+id);
 
   }
 }

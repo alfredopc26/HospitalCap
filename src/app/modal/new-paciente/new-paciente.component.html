@@ -1,63 +1,62 @@
-<h1 mat-dialog-title>Agregar Nuevo paciente</h1>
-<div mat-dialog-content>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h2>Nuevo Paciente</h2>
         <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
-        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label >Identificacion</label>
+              <input  type="number" name="identificacion" formControlName="identificacion" placeholder="Identificacion" class="form-control" id="identificacion">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label >Nombre</label>
+              <input name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre"> 
+            </div>
+          </div>
+            <div class="mb-3">
+              <label for="motivo">Numero de Telefono</label>
+              <input  type="number"  name="telefono" formControlName="telefono" placeholder="Telefono" class="form-control" id="telefono">
+            </div>
+    
+            <div class="mb-3">
+                <label >Direccion</label>
+                <input name="direccion" formControlName="direccion" placeholder="Direccion" class="form-control" id="direccion">
+              </div>
 
-            <mat-form-field style="width: 100%"  appearance="outline">
-                <mat-label>Identificacion</mat-label>
-                <input matInput type="number" name="identificacion" formControlName="identificacion" placeholder="Identificacion" class="form-control" id="identificacion">
-              </mat-form-field>
-              <br>
-                <mat-form-field style="width: 100%"  appearance="outline">
-                  <mat-label>Nombre</mat-label>
-                  <input matInput name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre">
-                </mat-form-field>
-                <br>
-              
-                <mat-form-field style="width: 100%"  appearance="outline">
-                  <mat-label>Telefono</mat-label>
-                  <input matInput type="number"  name="telefono" formControlName="telefono" placeholder="Telefono" class="form-control" id="telefono">
-                </mat-form-field>
-                <br>
-                <br>
-
-                <mat-form-field style="width: 100%"  appearance="outline">
-                    <mat-label>Direccion</mat-label>
-                    <input matInput name="direccion" formControlName="direccion" placeholder="Direccion" class="form-control" id="direccion">
-                  </mat-form-field>
-                  <br>
-
-                  <mat-form-field style="width: 100%"   appearance="outline">
-                    <mat-label>EPS</mat-label>
-                    <mat-select name="eps" formControlName="eps" placeholder="EPS" class="form-control" id="eps">
-                        <mat-option value="sura">SURA</mat-option>
-                        <mat-option value="sanitas">SANITAS</mat-option>
-                        <mat-option value="medimas">MEDIMAS</mat-option>
-                        <mat-option value="comeva">COOMEVA</mat-option>
-                        <mat-option value="nueva_eps">NUEVA EPS</mat-option>
-                      </mat-select>
-                  </mat-form-field>
-                  <br>
-
-                  <mat-form-field style="width: 100%"   appearance="outline">
-                    <mat-label>Acopañante</mat-label>
-                    <input matInput name="acompaniante" formControlName="acompaniante" placeholder="Acompañante" class="form-control" id="acompaniante">
-                  </mat-form-field>
-
-                  <div>
-                    <label>Antecedentes: </label>
-                    <mat-radio-group name="antecedentes" formControlName="antecedentes" placeholder="Antecedentes" class="form-control" id="antecedentes">
-                      <mat-radio-button value="Y">SI</mat-radio-button>
-                      <mat-radio-button value="N">NO</mat-radio-button>
-                    </mat-radio-group>
-                  </div>
-              
+        <div class="mb-3">
+          <label >EPS</label>
+          <select name="eps" formControlName="eps" placeholder="EPS" class="form-control" id="eps">
+            <option value="">Seleccione...</option>
+            <option value="sura">SURA</option>
+            <option value="sanitas">SANITAS</option>
+            <option value="medimas">MEDIMAS</option>
+            <option value="comeva">COOMEVA</option>
+            <option value="nueva_eps">NUEVA EPS</option>
+            <option value="nueva_eps">No tiene/ No aplica</option>
+          </select>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" [routerLink]="['/gestion_pacientes', id]">Cerrar</button>
-          <button type="submit" class="btn btn-primary" >Guardar</button>
-        </div>
-    </form>
+      <hr class="mb-4">
+      <div class="mb-3">
+        <label >Nombre de Acompañante</label>
+        <input name="acompaniante" formControlName="acompaniante" placeholder="Acompañante" class="form-control" id="acompaniante">
       </div>
+      
+      <div class="mb-3">
+         <label>Antecedentes: </label>
+         <mat-radio-group name="antecedentes" formControlName="antecedentes" placeholder="Antecedentes" class="form-control" id="antecedentes">
+           <mat-radio-button value="Y">SI</mat-radio-button>
+           <mat-radio-button value="N">NO</mat-radio-button>
+         </mat-radio-group>
+        </div>
+      <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+          <button class="btn btn-lg btn-block" [routerLink]="['/gestion_pacientes', id]" >Cancelar</button>
+          </form>
+      </div>
+    </div>
+  </div>
+
+<!-- _____________________________ -->
 
 

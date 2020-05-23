@@ -1,63 +1,86 @@
-<h1 mat-dialog-title>Agregar Nueva atencion</h1>
-<div mat-dialog-content>
-        <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
-        <div class="modal-body">
-
-            <mat-form-field style="width: 100%"  appearance="outline">
-                <mat-label>Doctor</mat-label>
-                <input matInput type="number" name="identificacion" formControlName="identificacion" placeholder="Identificacion" class="form-control" id="identificacion">
-              </mat-form-field>
-              <br>
-                <mat-form-field style="width: 100%"  appearance="outline">
-                  <mat-label>Paciente</mat-label>
-                  <input matInput name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre">
-                </mat-form-field>
-                <br>
-              
-                <mat-form-field style="width: 100%"  appearance="outline">
-                  <mat-label>Telefono</mat-label>
-                  <input matInput type="number"  name="telefono" formControlName="telefono" placeholder="Telefono" class="form-control" id="telefono">
-                </mat-form-field>
-                <br>
-                <br>
-
-                <mat-form-field style="width: 100%"  appearance="outline">
-                    <mat-label>Direccion</mat-label>
-                    <input matInput name="direccion" formControlName="direccion" placeholder="Direccion" class="form-control" id="direccion">
-                  </mat-form-field>
-                  <br>
-
-                  <mat-form-field style="width: 100%"   appearance="outline">
-                    <mat-label>EPS</mat-label>
-                    <mat-select name="eps" formControlName="eps" placeholder="EPS" class="form-control" id="eps">
-                        <mat-option value="sura">SURA</mat-option>
-                        <mat-option value="sanitas">SANITAS</mat-option>
-                        <mat-option value="medimas">MEDIMAS</mat-option>
-                        <mat-option value="comeva">COOMEVA</mat-option>
-                        <mat-option value="nueva_eps">NUEVA EPS</mat-option>
-                      </mat-select>
-                  </mat-form-field>
-                  <br>
-
-                  <mat-form-field style="width: 100%"   appearance="outline">
-                    <mat-label>Acopañante</mat-label>
-                    <input matInput name="acompaniante" formControlName="acompaniante" placeholder="Acompañante" class="form-control" id="acompaniante">
-                  </mat-form-field>
-
-                  <div>
-                    <label>Antecedentes: </label>
-                    <mat-radio-group name="antecedentes" formControlName="antecedentes" placeholder="Antecedentes" class="form-control" id="antecedentes">
-                      <mat-radio-button value="Y">SI</mat-radio-button>
-                      <mat-radio-button value="N">NO</mat-radio-button>
-                    </mat-radio-group>
-                  </div>
-              
+<div class="container">
+<div class="row">
+    <div class="col-md-8 order-md-1">
+      <h2>Nueva atencion</h2>
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" method="POST">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="doctor">Doctor</label>
+            <select name="doctor" formControlName="doctor" class="form-control" id="doctor">
+              <option value="">Seleccione...</option>
+              <option  *ngFor="let doctor of doctores" [value]="doctor.id">
+                {{doctor.nombre}}
+                </option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="paciente">Paciente</label>
+            <select name="paciente" formControlName="paciente" class="form-control" id="paciente">
+              <option value="">Seleccione...</option>
+              <option  *ngFor="let paciente of pacientes" [value]="paciente.id">
+                {{paciente.nombre}}
+                </option>
+            </select>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" [routerLink]="['/gestion_pacientes', id]">Cerrar</button>
-          <button type="submit" class="btn btn-primary" >Guardar</button>
+
+        <div class="mb-3">
+          <label for="motivo">Motivo de consulta</label>
+         <textarea name="motivo" placeholder="Describa los motivos de su consulta"  formControlName="motivo" class="form-control" id="motivo" cols="20"></textarea>
         </div>
-    </form>
-      </div>
 
+        <div class="mb-3">
+            <label for="diagnostico">Diagnostico medico</label>
+           <textarea name="diagnostico" placeholder="Describa el diagnostico dado por el medico"  formControlName="diagnostico" class="form-control" id="diagnostico" cols="20"></textarea>
+          </div>
 
+        <hr class="mb-4">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Y" id="medicamentor" formControlName="medicamentor" name="medicamentor">
+            <label class="form-check-label" for="medicamentor">
+              Requiere Medicamentos?
+            </label>
+          </div>
+
+          <div class="mb-3">
+           <textarea name="medicinas" placeholder="Escribas las medicinas separadas por coma"  formControlName="medicinas" class="form-control" id="medicinas" cols="20"></textarea>
+          </div>
+        <hr class="mb-4">
+            <label for="diagnostico">Seleccione los sintomas que haya sentido el paciente</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"  formControlName="dolor_garganta" id="sintoma1" name="dolor_garganta">
+                <label class="form-check-label" for="sintoma1">
+                  Dolor de gargante
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="tos" id="sintoma2" name="tos">
+                <label class="form-check-label" for="sintoma2">
+                  Tos
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="fiebre" id="sintoma3" name="fiebre">
+                <label class="form-check-label" for="sintoma3">
+                  Fiebre
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="congestion" id="sintoma4" name="congestion">
+                <label class="form-check-label" for="sintoma4">
+                  Congestion Nasal
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"  formControlName="fatiga" id="sintoma5" name="fatiga">
+                <label class="form-check-label" for="sintoma5">
+                  Fatiga Muscular
+                </label>
+            </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+        <button class="btn btn-lg btn-block" [routerLink]="['/triage', id]" >Cancelar</button>
+        </form>
+    </div>
+  </div>
+  </div>

@@ -7,6 +7,7 @@ import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-do
 import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
 import { NewDoctorComponent } from './modal/new-doctor/new-doctor.component';
 import { NewPacienteComponent } from './modal/new-paciente/new-paciente.component';
+import { NewTriageComponent} from './modal/new-triage/new-triage.component';
 
 const routes: Routes = [ 
   { path: '', component: DashboardComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'gestion_doctores/:idHospital', component: GestionDoctoresComponent },
   { path: 'crear_doctor/:idHospital', component: NewDoctorComponent },
   { path: 'crear_paciente/:idHospital', component: NewPacienteComponent },
+  { path: 'crear_triage/:idHospital', component: NewTriageComponent },
   { path: 'gestion_pacientes/:idHospital', component: GestionPacientesComponent },
 ];
 

@@ -29,7 +29,7 @@
             <td>{{doctor.experiencia}}</td>
             <td>{{doctor.nacimiento}}</td>
             <td>
-                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon" (click)="editarDoctor(doctor)" >
                 <mat-icon>edit</mat-icon>
               </button>
 

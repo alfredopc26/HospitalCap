@@ -5,7 +5,7 @@ export class Doctores {
     nombre: string;
     direccion: string;
     telefono: number;
-    tipoSangre: string;
+    tiposangre: string;
     experiencia: number;
     nacimiento: string;
 }

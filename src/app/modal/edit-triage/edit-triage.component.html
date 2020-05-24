@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h2>Editar Triage #</h2>
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()" method="POST">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="doctor">Doctor</label>
+                <select name="doctor" formControlName="doctor" class="form-control" id="doctor">
+                  <option value="">Seleccione...</option>
+                  <option  *ngFor="let doctor of doctores" [value]="doctor.id">
+                    {{doctor.nombre}}
+                    </option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="paciente">Paciente</label>
+                <select name="paciente" formControlName="paciente" class="form-control" id="paciente">
+                  <option value="">Seleccione...</option>
+                  <option  *ngFor="let paciente of pacientes" [value]="paciente.id">
+                    {{paciente.nombre}}
+                    </option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="mb-3">
+              <label for="motivos">Motivo de consulta</label>
+             <textarea name="motivos" placeholder="Describa los motivos de su consulta"  formControlName="motivos" class="form-control" id="motivos" cols="20"></textarea>
+            </div>
+    
+            <div class="mb-3">
+                <label for="diagnostico">Diagnostico medico</label>
+               <textarea name="diagnostico" placeholder="Describa el diagnostico dado por el medico"  formControlName="diagnostico" class="form-control" id="diagnostico" cols="20"></textarea>
+              </div>
+    
+            <hr class="mb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Y" id="medicamentoR" formControlName="medicamentoR" name="medicamentoR">
+                <label class="form-check-label" for="medicamentoR">
+                  Requiere Medicamentos?
+                </label>
+              </div>
+    
+              <div class="mb-3">
+               <textarea name="medicamentos" placeholder="Escribas las medicinas separadas por coma"  formControlName="medicamentos" class="form-control" id="medicamentos" cols="20"></textarea>
+              </div>
+            <hr class="mb-4">
+                <label for="diagnostico">Seleccione los sintomas que haya sentido el paciente</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  formControlName="dolor_garganta" id="sintoma1" name="dolor_garganta">
+                    <label class="form-check-label" for="sintoma1">
+                      Dolor de garganta
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" formControlName="tos" id="sintoma2" name="tos">
+                    <label class="form-check-label" for="sintoma2">
+                      Tos
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" formControlName="fiebre" id="sintoma3" name="fiebre">
+                    <label class="form-check-label" for="sintoma3">
+                      Fiebre
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" formControlName="congestion" id="sintoma4" name="congestion">
+                    <label class="form-check-label" for="sintoma4">
+                      Congestion Nasal
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  formControlName="fatiga" id="sintoma5" name="fatiga">
+                    <label class="form-check-label" for="sintoma5">
+                      Fatiga Muscular
+                    </label>
+                </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+            <button class="btn btn-lg btn-block" [routerLink]="['/triage', hospital]" >Cancelar</button>
+            </form>
+        </div>
+      </div>
+      </div>

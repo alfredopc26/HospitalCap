@@ -40,6 +40,9 @@ import { NewDoctorComponent } from './modal/new-doctor/new-doctor.component';
 import { NewPacienteComponent } from './modal/new-paciente/new-paciente.component';
 import { DialogoConfirmacionComponent } from './dialogo-confirmacion/dialogo-confirmacion.component';
 import { NewTriageComponent } from './modal/new-triage/new-triage.component';
+import { EditDoctorComponent } from './modal/edit-doctor/edit-doctor.component';
+import { EditPacienteComponent } from './modal/edit-paciente/edit-paciente.component';
+import { EditTriageComponent } from './modal/edit-triage/edit-triage.component';
 
 
 
@@ -55,7 +58,10 @@ import { NewTriageComponent } from './modal/new-triage/new-triage.component';
     NewDoctorComponent,
     NewPacienteComponent,
     DialogoConfirmacionComponent,
-    NewTriageComponent
+    NewTriageComponent,
+    EditDoctorComponent,
+    EditPacienteComponent,
+    EditTriageComponent
   ],
   imports: [
     BrowserModule,

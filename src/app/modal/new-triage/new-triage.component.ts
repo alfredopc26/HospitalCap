@@ -50,7 +50,7 @@ export class NewTriageComponent implements OnInit {
 
   obtenerDoctores(id){
 
-    this.hospitalService.getDoctor(id).subscribe( ( data: Doctores[] ) => {
+    this.hospitalService.getDoctores(id).subscribe( ( data: Doctores[] ) => {
       this.doctores = data;
       console.log(data);
   });

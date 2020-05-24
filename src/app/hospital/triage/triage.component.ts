@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import { Triage } from '../../../model/triage';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -26,7 +26,8 @@ export class TriageComponent implements OnInit {
     private hospitalService: ApiHospitalService,
     private chRef: ChangeDetectorRef,
     private snackBar: MatSnackBar,
-    private dialogo: MatDialog
+    private dialogo: MatDialog,
+    private router: Router
      ) {
       this.rutaActiva.params.subscribe(params => {
         console.log(params['idHospital']);
@@ -59,13 +60,19 @@ export class TriageComponent implements OnInit {
 
     obtenerTriage(id){
 
-      this.hospitalService.getTriage(id).subscribe( ( data: Triage[] ) => {
+      this.hospitalService.getTriages(id).subscribe( ( data: Triage[] ) => {
         this.triages = data;
         console.log(data);
         this.chRef.detectChanges();
         const table: any = $('#table_triage');
         this.dataTable = table.DataTable();
     });
+  }
+
+  editarPaciente(triage:Triage) {
+    window.localStorage.setItem("triageId", triage.id.toString());
+    window.localStorage.setItem("hospitalId", triage.hospital.toString());
+    this.router.navigate(['editar/triage']);
   }
 
   }

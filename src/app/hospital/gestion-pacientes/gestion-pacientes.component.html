@@ -28,7 +28,7 @@
             <td>{{paciente.acompaniante}}</td>
             <td>{{paciente.antecedentes}}</td>
             <td>
-                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon" (click)="editarPaciente(paciente)">
                 <mat-icon>edit</mat-icon>
               </button>
 

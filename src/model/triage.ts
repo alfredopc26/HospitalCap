@@ -1,10 +1,12 @@
 export class Triage {
-    id: number;
-    hospital: number;
-    doctor: number;
-    paciente: number;
+    id: string;
+    hospital: string;
+    doctor: string;
+    paciente: string;
     motivos: string;
     diagnostico: string;
-    medicamento: string;
+    medicamentoR: string;
+    medicamentos: string;
+    sintomas: string;
     covid: string;
 }

@@ -1,5 +1,6 @@
 export class Pacientes {
     id: string;
+    hospital: string;
     nombre: string;
     eps: string;
     telefono: number;

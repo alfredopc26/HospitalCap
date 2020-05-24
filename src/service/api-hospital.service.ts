@@ -26,14 +26,23 @@ export class ApiHospitalService {
   getHospital(id: Hospital){
     return this.http.get<Hospital[]>(this.url+'option=getHospital&hospital='+id);
   }
-  getDoctor(id: string){
+  getDoctores(id: string){
     return this.http.get<Doctores[]>(this.url+'option=getDoctores&hospital='+id);
+  }
+  getDoctor(id: string){
+    return this.http.get<Doctores[]>(this.url+'option=getDoctor&doctor='+id);
   }
   getPacientes(id: string){
     return this.http.get<Pacientes[]>(this.url+'option=getPacientes&hospital='+id);
   }
+  getPaciente(id: string){
+    return this.http.get<Pacientes[]>(this.url+'option=getPaciente&paciente='+id);
+  }
+  getTriages(id: string){
+    return this.http.get<Triage[]>(this.url+'option=getTriages&hospital='+id);
+  }
   getTriage(id: string){
-    return this.http.get<Triage[]>(this.url+'option=getTriage&hospital='+id);
+    return this.http.get<Triage[]>(this.url+'option=getTriage&triage='+id);
   }
 
 
@@ -66,8 +75,23 @@ export class ApiHospitalService {
     return this.http.get<ApiHospitalService>(this.url+'option=borrarPaciente&id='+id);
 
   }
-  eliminarTriage(id:number): Observable<ApiHospitalService>  {
+  eliminarTriage(id:string): Observable<ApiHospitalService>  {
     return this.http.get<ApiHospitalService>(this.url+'option=borrarTriage&id='+id);
+
+  }
+
+
+
+  editarDoctor(doctores:Doctores): Observable<ApiHospitalService>  {
+    return this.http.post<ApiHospitalService>(this.url+'option=editDoctor', JSON.stringify(doctores));
+
+  }
+  editarPaciente(paciente:Pacientes): Observable<ApiHospitalService>  {
+    return this.http.post<ApiHospitalService>(this.url+'option=editPaciente', JSON.stringify(paciente));
+
+  }
+  editarTriage(triage:Triage): Observable<ApiHospitalService>  {
+    return this.http.post<ApiHospitalService>(this.url+'option=editTriage', JSON.stringify(triage));
 
   }
 }

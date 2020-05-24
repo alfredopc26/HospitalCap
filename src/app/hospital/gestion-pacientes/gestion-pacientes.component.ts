@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import { Pacientes } from '../../../model/pacientes';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -26,7 +26,8 @@ export class GestionPacientesComponent implements OnInit {
     private hospitalService: ApiHospitalService,
     private chRef: ChangeDetectorRef,
     private snackBar: MatSnackBar,
-    private dialogo: MatDialog
+    private dialogo: MatDialog,
+    private router: Router
     ) {
       this.rutaActiva.params.subscribe(params => {
       console.log(params['idHospital']);
@@ -67,5 +68,11 @@ export class GestionPacientesComponent implements OnInit {
           const table: any = $('#table_pacientes');
           this.dataTable = table.DataTable();
       });
+    }
+
+    editarPaciente(paciente:Pacientes) {
+      window.localStorage.setItem("pacienteId", paciente.id);
+      window.localStorage.setItem("hospitalId", paciente.hospital);
+      this.router.navigate(['editar/paciente']);
     }
 }

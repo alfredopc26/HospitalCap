@@ -1,0 +1,63 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h2>Editar Paciente #{{id}}</h2>
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()" method="POST">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label >Identificacion</label>
+                <input  type="number" name="id" formControlName="id" placeholder="Identificacion" class="form-control" id="id">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label >Nombre</label>
+                <input name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre"> 
+              </div>
+            </div>
+              <div class="mb-3">
+                <label for="motivo">Numero de Telefono</label>
+                <input  type="number"  name="telefono" formControlName="telefono" placeholder="Telefono" class="form-control" id="telefono">
+              </div>
+      
+              <div class="mb-3">
+                  <label >Direccion</label>
+                  <input name="direccion" formControlName="direccion" placeholder="Direccion" class="form-control" id="direccion">
+                </div>
+  
+          <div class="mb-3">
+            <label >EPS</label>
+            <select name="eps" formControlName="eps" placeholder="EPS" class="form-control" id="eps">
+              <option value="">Seleccione...</option>
+              <option value="sura">SURA</option>
+              <option value="sanitas">SANITAS</option>
+              <option value="medimas">MEDIMAS</option>
+              <option value="comeva">COOMEVA</option>
+              <option value="nueva_eps">NUEVA EPS</option>
+              <option value="nueva_eps">No tiene/ No aplica</option>
+            </select>
+          </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label >Nombre de Acompañante</label>
+          <input name="acompaniante" formControlName="acompaniante" placeholder="Acompañante" class="form-control" id="acompaniante">
+        </div>
+        
+        <div class="mb-3">
+           <label>Antecedentes: </label>
+           <mat-radio-group name="antecedentes" formControlName="antecedentes" placeholder="Antecedentes" class="form-control" id="antecedentes">
+             <mat-radio-button value="Y">SI</mat-radio-button>
+             <mat-radio-button value="N">NO</mat-radio-button>
+           </mat-radio-group>
+          </div>
+        <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+            <button class="btn btn-lg btn-block" [routerLink]="['/gestion_pacientes', id]" >Cancelar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  
+  <!-- _____________________________ -->
+  
+  
+  

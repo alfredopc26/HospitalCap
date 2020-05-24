@@ -29,7 +29,8 @@ export class GestionDoctoresComponent implements OnInit{
     private hospitalService: ApiHospitalService,
     private chRef: ChangeDetectorRef,
     private snackBar: MatSnackBar,
-    private dialogo: MatDialog
+    private dialogo: MatDialog,
+    private router: Router
     ) {
       this.rutaActiva.params.subscribe(params => {
       console.log(params['idHospital']);
@@ -63,7 +64,7 @@ export class GestionDoctoresComponent implements OnInit{
 
   obtenerDoctores(id){
 
-    this.hospitalService.getDoctor(id).subscribe( ( data: Doctores[] ) => {
+    this.hospitalService.getDoctores(id).subscribe( ( data: Doctores[] ) => {
       this.doctores = data;
       console.log(data);
 
@@ -71,6 +72,12 @@ export class GestionDoctoresComponent implements OnInit{
       const table: any = $('#table_doctores');
       this.dataTable = table.DataTable();
   });
+}
+
+editarDoctor(doctor:Doctores) {
+  window.localStorage.setItem("doctorId", doctor.id.toString());
+  window.localStorage.setItem("hospitalId", doctor.hospital.toString());
+  this.router.navigate(['editar/doctor']);
 }
 
 }

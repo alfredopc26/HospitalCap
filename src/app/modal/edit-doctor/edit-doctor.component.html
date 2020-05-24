@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h2>Editar Doctor #{{id}}</h2>
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()" method="POST">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label >Nombre</label>
+                <input name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre">
+              </div>            
+              <div class="col-md-6 mb-3">
+                <label for="motivo">Numero de Telefono</label>
+                <input type="number"  name="telefono" formControlName="telefono" placeholder="Telefono" class="form-control" id="telefono">
+              </div>            
+            </div>
+      
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                  <label >Direccion</label>
+                  <input name="direccion" formControlName="direccion" placeholder="Direccion" class="form-control" id="direccion">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label >Tipo de Sangre</label>
+                  <input name="tiposangre" formControlName="tiposangre" placeholder="Tipo de sangre" class="form-control" id="tiposangre">
+               </div>
+            </div>
+        
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label >Años de experiencia</label>
+          <input type="number" name="experiencia" formControlName="experiencia" placeholder="Experiencia" class="form-control" id="experiencia">
+        </div>  
+        <div class="mb-3">
+           <label>Fecha de Nacimiento: </label>
+           <input matInput type="date" name="nacimiento" formControlName="nacimiento" placeholder="Fecha de Nacimiento" class="form-control" id="nacimiento">
+          </div>
+        <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+            <button class="btn btn-lg btn-block" [routerLink]="['/gestion_doctores', hospital]" >Cancelar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+     
+ <!-- ________________      -->
+     

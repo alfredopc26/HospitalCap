@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiHospitalService {
 
-//  private url = "http://localhost/webServices/controller.api.php?";
- private url = "http://192.168.39.102/webServices/controller.api.php?";
+ private url = "http://localhost/webServices/controller.api.php?";
+//  private url = "http://192.168.39.102/webServices/controller.api.php?";
  
   constructor( private http:HttpClient ) { }
 

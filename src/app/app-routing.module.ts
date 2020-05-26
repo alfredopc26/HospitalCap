@@ -7,10 +7,11 @@ import { GestionDoctoresComponent } from './hospital/gestion-doctores/gestion-do
 import { GestionPacientesComponent } from './hospital/gestion-pacientes/gestion-pacientes.component';
 import { NewDoctorComponent } from './modal/new-doctor/new-doctor.component';
 import { NewPacienteComponent } from './modal/new-paciente/new-paciente.component';
+import { NewTriageComponent} from './modal/new-triage/new-triage.component';
 import { EditDoctorComponent } from './modal/edit-doctor/edit-doctor.component';
 import { EditPacienteComponent } from './modal/edit-paciente/edit-paciente.component';
 import { EditTriageComponent } from './modal/edit-triage/edit-triage.component';
-import { NewTriageComponent} from './modal/new-triage/new-triage.component';
+import { EditHospitalComponent } from './modal/edit-hospital/edit-hospital.component';
 
 const routes: Routes = [ 
   { path: '', component: DashboardComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'crear_triage/:idHospital', component: NewTriageComponent },
   { path: 'editar/doctor', component: EditDoctorComponent },
   { path: 'editar/paciente', component: EditPacienteComponent },
-  { path: 'editar/triage', component: EditTriageComponent }
+  { path: 'editar/triage', component: EditTriageComponent },
+  { path: 'editar/hospital', component: EditHospitalComponent }
 ];
 
 @NgModule({

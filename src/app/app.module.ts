@@ -43,6 +43,7 @@ import { NewTriageComponent } from './modal/new-triage/new-triage.component';
 import { EditDoctorComponent } from './modal/edit-doctor/edit-doctor.component';
 import { EditPacienteComponent } from './modal/edit-paciente/edit-paciente.component';
 import { EditTriageComponent } from './modal/edit-triage/edit-triage.component';
+import { EditHospitalComponent } from './modal/edit-hospital/edit-hospital.component';
 
 
 
@@ -61,7 +62,8 @@ import { EditTriageComponent } from './modal/edit-triage/edit-triage.component';
     NewTriageComponent,
     EditDoctorComponent,
     EditPacienteComponent,
-    EditTriageComponent
+    EditTriageComponent,
+    EditHospitalComponent
   ],
   imports: [
     BrowserModule,

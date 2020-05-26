@@ -1,7 +1,7 @@
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute} from '@angular/router';
+import { Router} from '@angular/router';
 import { Doctores } from '../../../model/doctores';
 
 @Component({

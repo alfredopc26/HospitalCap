@@ -2,6 +2,21 @@
 <div class="box box-default">
     <div class="box-header" style="text-align: center;" >
         <h1>{{ hosp.nombre }}</h1>
+        <mat-card> 
+            <table class="table table-striped" id="">
+                <thead>
+                    <tr>
+                        <th>Representante: </th><td>{{ hosp.representante }}</td>
+                        <th>Telefono: </th><td>{{ hosp.telefono }}</td>
+                    </tr>
+                    <tr>
+                        <th>Direccion: </th><td>{{ hosp.direccion }}</td>
+                        <th>NIT: </th><td>{{ hosp.nit }}</td>
+                    </tr>
+                </thead>
+            </table>
+        </mat-card>
+        
     </div>
 </div>
 <mat-divider></mat-divider>
@@ -44,6 +59,11 @@
      #tooltip="matTooltip"
     matTooltip="Atras" >
         <span><mat-icon>home</mat-icon></span>
+      </button>
+      <button class="botonF1" (click)="editarHospital(hosp)"
+     #tooltip="matTooltip"
+    matTooltip="Editar" >
+        <span><mat-icon>edit</mat-icon></span>
       </button>
      </div>
 

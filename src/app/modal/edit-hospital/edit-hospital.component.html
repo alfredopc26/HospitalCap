@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h2>Editar Hospital #{{id}}</h2>
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()" method="POST">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label >Nombre</label>
+                <input name="nombre" formControlName="nombre" placeholder="Nombre" class="form-control" id="nombre">
+              </div>            
+              <div class="col-md-6 mb-3">
+                <label for="motivo">Numero de Telefono</label>
+                <input type="number"  name="telefono" formControlName="telefono" placeholder="Telefono" class="form-control" id="telefono">
+              </div>            
+            </div>
+      
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                  <label >Direccion</label>
+                  <input name="direccion" formControlName="direccion" placeholder="Direccion" class="form-control" id="direccion">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label >NIT</label>
+                  <input type="number"  formControlName="nit" placeholder="NIT" name="nit" class="form-control" id="nit">
+               </div>
+            </div>
+        
+        <hr class="mb-4">
+        <div class="mb-6">
+          <label >Representante</label>
+          <input type="text"  formControlName="representante" placeholder="Representante" name="representante" class="form-control" id="representante">
+        </div> 
+
+        <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+            <button class="btn btn-lg btn-block" [routerLink]="['/hospital', id]" >Cancelar</button>
+            </form>
+        </div>
+      </div>
+    </div>

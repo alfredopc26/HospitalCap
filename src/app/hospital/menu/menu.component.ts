@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { ApiHospitalService } from '../../../service/api-hospital.service';
 import { Hospital } from '../../../model/hospital';
+
 
 @Component({
   selector: 'app-menu',
@@ -15,7 +16,8 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private rutaActiva: ActivatedRoute,
-    private hospitalService: ApiHospitalService
+    private hospitalService: ApiHospitalService,
+    private router: Router
    ) {
     this.rutaActiva.params.subscribe(params => {
       console.log(params['idHospital']);
@@ -34,5 +36,11 @@ export class MenuComponent implements OnInit {
       this.hosp = data;
       console.log(data);
   });
+
+}
+
+editarHospital(hospital:Hospital) {
+  window.localStorage.setItem("hospitalId", hospital.id.toString());
+  this.router.navigate(['editar/hospital']);
 }
 }

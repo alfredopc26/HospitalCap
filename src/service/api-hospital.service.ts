@@ -23,7 +23,7 @@ export class ApiHospitalService {
     return this.http.get<Hospital[]>(this.url+'option=getHospitales');
   }
 
-  getHospital(id: Hospital){
+  getHospital(id: string){
     return this.http.get<Hospital[]>(this.url+'option=getHospital&hospital='+id);
   }
   getDoctores(id: string){
@@ -92,6 +92,10 @@ export class ApiHospitalService {
   }
   editarTriage(triage:Triage): Observable<ApiHospitalService>  {
     return this.http.post<ApiHospitalService>(this.url+'option=editTriage', JSON.stringify(triage));
+
+  }
+  editarHospital(hospital:Hospital): Observable<ApiHospitalService>  {
+    return this.http.post<ApiHospitalService>(this.url+'option=editHospital', JSON.stringify(hospital));
 
   }
 }
